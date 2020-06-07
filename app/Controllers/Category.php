@@ -23,8 +23,8 @@ class Category extends BaseController
 	{
 		if($this->request->isAJAX()) {
 			header('Content-Type: application/json');
-
-			$categories = $this->category->getCategory();
+			$root_category = $this->request->getVar('root_category');
+			$categories = $this->category->getCategory($root_category);
 			return $this->respond($categories,200);
 		}
 	}
