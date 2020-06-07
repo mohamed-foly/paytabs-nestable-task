@@ -11,4 +11,9 @@ class Category extends BaseController
 		$this->category =  new CategoryModel();
 	}
 
+	public function index()
+	{
+		return view('category');
+	}
+
 }
