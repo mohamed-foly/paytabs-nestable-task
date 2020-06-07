@@ -9,9 +9,9 @@ class CategoryModel extends Model
 
     protected $allowedFields = ['name', 'parent_id'];
 
-    public function getCategory()
+    public function getCategory($root_id = null)
 	{
-		$root_categories = $this->where('parent_id', null)->findAll();
+		$root_categories = $root_id ? $this->where('id',$root_id)->findAll() : $this->where('parent_id', null)->findAll();
 		$i = 0;
 
 		foreach ($root_categories as $category) {
