@@ -15,7 +15,7 @@ class CategoryModel extends Model
 		$i = 0;
 
 		foreach ($root_categories as $category) {
-			$root_categories[$i]->child = $this->getChildMenu($category->id);
+			$root_categories[$i]['child'] = $this->getChildCategory($category['id']);
 			$i++;
 		}
 
@@ -28,7 +28,7 @@ class CategoryModel extends Model
 		$i = 0;
 
 		foreach ($childrens as $mn) {
-			$childrens[$i]->child = $this->getChildMenu($mn->menu_id);
+			$childrens[$i]['child'] = $this->getChildCategory($mn['id']);
 			$i++;
 		}
 
