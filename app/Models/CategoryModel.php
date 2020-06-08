@@ -19,7 +19,7 @@ class CategoryModel extends Model
 			$i++;
 		}
 
-		return $root_categories;
+		return $root_id && isset($root_categories[0]) ? $root_categories[0]['child'] : $root_categories;
 	}
 
 	public function getChildCategory($parent_id)
