@@ -21,6 +21,7 @@ class CreateCategories extends Migration
 				'type' => 'INT',
 				'unsigned' => TRUE,
 				'constraint' => '100',
+				'null' => TRUE,
 			],
 		]);
 		$this->forge->addKey('id', TRUE);
